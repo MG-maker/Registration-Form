@@ -1,0 +1,89 @@
+﻿@model WebApplication2.Models.Person
+<form asp-antiforgery="true" asp-action="Create" asp-controller="Home" method="post">
+    <h1>Registration Form</h1>
+    <div>
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="FirstName"></label>
+            </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-account icon"></i>
+            <input type="text" asp-for="FirstName" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="SecondName"></label>
+            </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-accounts icon"></i>
+            <input type="text" asp-for="SecondName" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for="SecondName"></span>
+        </div>
+        <div>
+            <label asp-for="UserName"></label>
+            </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-account-box icon"></i>
+            <input type="text" asp-for="UserName" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div >
+            <label asp-for="Email"></label>
+            </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-email icon"></i>
+            <input asp-for="Email" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div >
+            <label asp-for="Gender"></label>
+            </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-local-wc icon" style="font-size: 17px"></i>
+            <select asp-for="Gender" class="input-field">
+                <option value="" disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="femal">Female</option>
+            </select>
+            </div>
+        <div>
+            <span asp-validation-for="Gender"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label><br />
+        </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-lock icon"></i>
+            <input asp-for="Password" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label asp-for=" ConfirmPassword"></label>
+        </div>
+        <div class="input-container">
+            <i class="zmdi zmdi-lock-outline icon"></i>
+            <input asp-for=" ConfirmPassword" class="input-field" />
+        </div>
+        <div>
+            <span asp-validation-for=" ConfirmPassword"></span>
+        </div>
+        <button>
+            Register
+            <i class="zmdi zmdi-arrow-right"></i>
+        </button>
+    </div>
+</form>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
